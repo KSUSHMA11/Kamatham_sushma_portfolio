@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushma | Frontend Developer</title>
+    <meta name="description" content="Personal portfolio of Sushma, a passionate Frontend Developer with specification in Artifical Intelligence .">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+   
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222222;
+            --primary-color: #6366f1;
+            --secondary-color: #e0e7ff;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --card-bg: #f8fafc;
+        }
+        
+        .dark {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --primary-color: #818cf8;
+            --secondary-color: #1e293b;
+            --header-bg: rgba(15, 23, 42, 0.95);
+            --card-bg: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            BACKGROUND: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Sticky Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--header-bg);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        #theme-toggle {
+            background: none;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        #theme-toggle:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Hero Section with Animation */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s ease forwards 0.5s;
+        }
+        
+        .hero-content p.tagline {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s ease forwards 0.8s;
+        }
+        
+        .hero-content p.intro {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeUp 1s ease forwards 1.1s;
+        }
+        
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 2rem auto;
+            border: 6px solid var(--primary-color);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeUp 1s ease forwards 1.4s;
+        }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Floating background shapes */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary-color);
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+        
+        .shape1 { width: 300px; height: 300px; top: 10%; left: 10%; }
+        .shape2 { width: 200px; height: 200px; bottom: 20%; right: 15%; animation-delay: 5s; }
+        .shape3 { width: 150px; height: 150px; top: 50%; right: 5%; animation-delay: 10s; }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        /* Quick Facts */
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .fact-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .fact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        /* Gallery with Lightbox */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Lightbox Modal */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        
+        /* Contact */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-links a {
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-links a:hover {
+            transform: scale(1.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3.5rem; }
+            .hero-content p.tagline { font-size: 1.5rem; }
+            nav ul { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">Dark Mode</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+        
+        <div class="hero-content">
+            <h1> Kamatham Sushma</h1>
+            <p class="tagline">Frontend Developer</p>
+            <p class="intro">Passionate about creating beautiful, responsive, and user-friendly web experiences.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyuD7qSyeHfkA7tHx-FbQEvyPsSWu-h4J0wg&s" alt="Sushma's Photo" class="avatar">
+        </div>
+    </section>
+
+    <!-- About / Personal Info -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p style="text-align:center; max-width:800px; margin:0 auto 3rem;">
+            I'm a frontend developer with specification in Artifical Intelligence, and a strong eye for design and a love for clean, interactive UIs. I enjoy turning ideas into engaging digital experiences.
+        </p>
+        
+        <div class="facts">
+            <div class="fact-card">
+                <h3>Location</h3>
+                <p>Kurnool, Andhra Pradesh, India</p>
+            </div>
+            <div class="fact-card">
+                <h3>Languages</h3>
+                <p>English, Telugu, Hindi</p>
+            </div>
+            <div class="fact-card">
+                <h3>Interests</h3>
+                <p>Web Development, UI/UX Design, Traveling, Photography</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="background: var(--secondary-color);">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">HTML5</div>
+            <div class="skill">CSS3</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Responsive Design</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">UI/UX Basics</div>
+        </div>
+    </section>
+
+    <!-- Gallery with Lightbox -->
+    <section id="gallery">
+        <h2>Hobbies & Inspirations</h2>
+        <div class="gallery">
+            <img src="https://surl.li/dmcuir" alt="Exploring New Things" onclick="openLightbox(this)">
+            <img src="https://surl.lu/fesexa" alt="Traveling" onclick="openLightbox(this)">
+            <img src="https://surl.lu/zxmrve" alt="Watching Documentries" onclick="openLightbox(this)">
+            <img src="https://surl.li/mbbkbk" alt="Photography" onclick="openLightbox(this)">
+            <img src="https://surl.li/umwjbe" alt="Creative Art" onclick="openLightbox(this)">
+            <img src="https://surl.lt/vfhaid" alt="Music" onclick="openLightbox(this)">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background: var(--secondary-color); text-align:center;">
+        <h2>Contact</h2>
+        <p>Feel free to reach out!</p>
+        <div class="contact-links">
+            <a href="sushmakamatham3@gmail.com">✉️</a>
+            <a href="www.linkedin.com/in/kamatam-sushma-3454p53" target="_blank">💼</a>
+            <a href="https://github.com/KSUSHMA11" target="_blank">🐙</a>
+        </div>
+        <p style="margin-top: 2rem;">
+            <a href="https://surl.li/ppkquy" style="color: var(--primary-color); text-decoration: underline;">Download Resume (PDF)</a>
+        </p>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        // Theme Toggle
+        const toggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Check for saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark');
+            toggle.textContent = 'Light Mode';
+        }
+        
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            if (body.classList.contains('dark')) {
+                toggle.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                toggle.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Lightbox Functions
+        function openLightbox(element) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'flex';
+            lightboxImg.src = element.src;
+            lightboxImg.alt = element.alt;
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
