@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kamatham Sushma | AI & Frontend Developer</title>
-  <meta name="description" content="Portfolio of Kamatham Sushma — AI & Frontend Developer from Kurnool, India. Passionate about building intelligent, beautiful web experiences.">
+  <meta name="description" content="Portfolio of Kamatham Sushma — AI Training Data Engineer & Frontend Developer from Kurnool, India. Experienced in video annotation, labeling & QC at DreamVu, Hyderabad.">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -280,6 +280,49 @@
     }
     .btn-send:hover { transform:translateY(-3px); box-shadow:0 0 45px var(--primary-glow); }
 
+    /* ── EXPERIENCE ── */
+    #experience { background:var(--bg2); }
+    .timeline { position:relative; padding-left:2rem; }
+    .timeline::before {
+      content:''; position:absolute; left:0; top:0; bottom:0;
+      width:2px; background:linear-gradient(180deg,var(--primary),var(--accent),transparent);
+      border-radius:99px;
+    }
+    .exp-card {
+      position:relative; background:var(--card); border:1px solid var(--border);
+      border-radius:20px; padding:1.8rem 2rem; margin-bottom:2rem;
+      transition:border-color .3s, transform .3s;
+    }
+    .exp-card:hover { border-color:var(--primary); transform:translateX(6px); }
+    .exp-card::before {
+      content:''; position:absolute; left:-2.6rem; top:2rem;
+      width:14px; height:14px; border-radius:50%;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow:0 0 12px var(--primary-glow); border:2px solid var(--bg);
+    }
+    .exp-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:.5rem; margin-bottom:.8rem; }
+    .exp-role { font-size:1.15rem; font-weight:700; color:var(--text); }
+    .exp-company {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.82rem; font-weight:600; text-transform:uppercase; letter-spacing:.8px;
+      padding:.3rem .85rem; border-radius:99px;
+      background:rgba(167,139,250,.12); color:var(--primary); border:1px solid rgba(167,139,250,.25);
+    }
+    .exp-duration {
+      font-size:.8rem; color:var(--muted); font-family:'Fira Code',monospace;
+      display:flex; align-items:center; gap:.4rem;
+    }
+    .exp-location { font-size:.8rem; color:var(--muted); margin-bottom:1rem; display:flex; align-items:center; gap:.4rem; }
+    .exp-upgrade {
+      display:inline-flex; align-items:center; gap:.45rem;
+      background:rgba(56,189,248,.1); color:var(--accent); border:1px solid rgba(56,189,248,.25);
+      border-radius:99px; font-size:.78rem; font-weight:600; padding:.3rem .85rem; margin-bottom:1rem;
+    }
+    .exp-desc { color:var(--muted); font-size:.9rem; line-height:1.75; }
+    .exp-desc li { margin-bottom:.45rem; list-style:none; padding-left:1.3rem; position:relative; }
+    .exp-desc li::before { content:'▹'; position:absolute; left:0; color:var(--primary); }
+    .exp-tags { display:flex; gap:.4rem; flex-wrap:wrap; margin-top:1.2rem; }
+
     /* ── FOOTER ── */
     footer {
       text-align:center; padding:2rem 5%; border-top:1px solid var(--border);
@@ -326,6 +369,7 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="#hero">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -351,14 +395,14 @@
       <div class="stats-row">
         <div class="stat"><span class="num">3+</span><span class="lbl">Projects Built</span></div>
         <div class="stat"><span class="num">5+</span><span class="lbl">Technologies</span></div>
-        <div class="stat"><span class="num">3</span><span class="lbl">Languages Spoken</span></div>
+        <div class="stat"><span class="num">5mo</span><span class="lbl">Industry Exp.</span></div>
       </div>
     </div>
     <div class="hero-right">
       <div class="photo-wrap">
         <div class="photo-ring"></div>
         <div class="photo-inner">
-          <img src="K Sushma.jpeg" alt="Kamatham Sushma">
+          <img src="KAMATHAM_SUSHMA.jpeg" alt="Kamatham Sushma">
         </div>
         <div class="badge-fl b1"><i class="fas fa-brain"></i> AI Enthusiast</div>
         <div class="badge-fl b2"><i class="fas fa-code"></i> Frontend Dev</div>
@@ -404,6 +448,50 @@
           <p>UI/UX, Designing, Photography</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <span class="section-tag">// work_experience</span>
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+    <div class="timeline">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">QC Engineer (Quality Control)</div>
+            <div style="margin-top:.35rem;">
+              <span class="exp-company"><i class="fas fa-building"></i> DreamVu Pvt. Ltd.</span>
+            </div>
+          </div>
+          <div style="text-align:right;">
+            <div class="exp-duration"><i class="fas fa-calendar-alt"></i> 5 Months</div>
+          </div>
+        </div>
+        <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India</div>
+        <div class="exp-upgrade">
+          <i class="fas fa-arrow-up"></i> Promoted from Annotation Team → QC Engineer
+        </div>
+        <ul class="exp-desc">
+          <li>Started as an <strong>AI Training Data Annotator</strong> and was selected/upgraded to the <strong>Quality Control (QC)</strong> team based on performance.</li>
+          <li>Worked as an <strong>AI Training Data Engineer</strong>, specialising in video annotation and labeling for AI/ML model training datasets.</li>
+          <li>Reviewed and ensured the accuracy, consistency, and quality of annotated video data used to train computer vision models.</li>
+          <li>Collaborated with the annotation team to maintain data quality standards and provide feedback for continuous improvement.</li>
+          <li>Gained hands-on experience in AI data pipelines, bounding box annotation, object tracking, and frame-level labeling.</li>
+        </ul>
+        <div class="exp-tags">
+          <span class="tag">Video Annotation</span>
+          <span class="tag">Data Labeling</span>
+          <span class="tag">Quality Control</span>
+          <span class="tag">AI Training Data</span>
+          <span class="tag">Computer Vision</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
